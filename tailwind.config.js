@@ -6,7 +6,12 @@ module.exports = {
     './src/**/*.{html,js}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'small': {'max':'775px'},
+        'notSmall':{'min':'775px'}
+      }
+    },
   },
   plugins: [
     
