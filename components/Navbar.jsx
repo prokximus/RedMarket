@@ -1,8 +1,6 @@
 import React from "react";
 import Link from 'next/link'
-import {
-	GoThreeBars
-} from 'react-icons/go'
+import { GoThreeBars } from "react-icons/go";
 
 
 function Navbar() {
@@ -20,8 +18,8 @@ function Navbar() {
 						<nav className="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center small:hidden space-x-4 mr-4">
 
 							<Link href={'/'}><a className="hover:text-red-600 transition-all duration-200 font-semibold cursor-pointer">Home</a></Link>
-							<Link href={'/'}><a className="hover:text-red-600 transition-all duration-200 font-semibold cursor-pointer">About</a></Link>
-							<Link href={'/'}><a className="hover:text-red-600 transition-all duration-200 font-semibold cursor-pointer">Phones</a></Link>
+							<Link href={'/about'}><a className="hover:text-red-600 transition-all duration-200 font-semibold cursor-pointer">About</a></Link>
+							<Link href={'/phones'}><a className="hover:text-red-600 transition-all duration-200 font-semibold cursor-pointer">Phones</a></Link>
 							<Link href={'/'}><a className="hover:text-red-600 transition-all duration-200 font-semibold cursor-pointer">Tablets</a></Link>
 							<Link href={'/'}><a className="hover:text-red-600 transition-all duration-200 font-semibold cursor-pointer">Computers</a></Link>
 							<Link href={'/'}><a className="hover:text-red-600 transition-all duration-200 font-semibold cursor-pointer">Gaming</a></Link>
