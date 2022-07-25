@@ -1,17 +1,26 @@
 import Navbar from "../components/Navbar";
 import { createClient } from "next-sanity";
+import Image from "next/image";
 
 export default function Home({ product }) {
-    const client = createClient({
-			projectId: "e12bk888",
-			dataset: "production",
-			useCdn: true,
-		});
+	const client = createClient({
+		projectId: "e12bk888",
+		dataset: "production",
+		useCdn: true,
+	});
 	// console.log(product);
 	return (
 		<div className="">
 			<Navbar></Navbar>
-			<img className="mx-auto" src="/assets/herp.png" alt="" />
+			<div className="flex justify-center">
+				<Image
+					width={1500}
+					height={500}
+					className=""
+					src="/assets/herp.png"
+					alt=""
+				/>
+			</div>
 		</div>
 	);
 }
@@ -31,4 +40,4 @@ export async function getServerSideProps(context) {
 			product,
 		},
 	};
-};
+}
