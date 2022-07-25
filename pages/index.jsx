@@ -29,7 +29,7 @@ export async function getServerSideProps(context) {
 	const client = createClient({
 		projectId: "e12bk888",
 		dataset: "production",
-		useCdn: true,
+		useCdn: false,
 	});
 
 	const query = `*[_type == 'product'][0...3]`;
