@@ -25,7 +25,7 @@ function Navbar() {
 		<>
 			<header className="text-black body-font bg-red-300 ">
 				<div className="container mx-auto flex flex-wrap pr-5 py-1 justify-between small:justify-start space-x-1 items-center">
-					{" "}
+					{/* {" "} */}
 					{/* Justify Start for small devices so that the button and Logo are aligned at left */}
 					{/* Below is the hamburger button*/}
 					<div className="flex justify-between">
