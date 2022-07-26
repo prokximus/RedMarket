@@ -8,7 +8,7 @@ import { useState } from "react";
 function Navbar() {
 	const [width, setwidth] = useState("w-0"); // useState defines the initial width to zero for the hamburger
 	const [visibility, setvisibility] = useState("overflow-x-hidden"); // useState defines the initial visibility to show the menu only when clicked
-	const [blur, setblur] = useState('bloc')
+	const [blur, setblur] = useState('hidden')
 
 	const openHam = () => {
 		setwidth("w-[55%]"); // setwidth to the desired width for the hamburger menu by button id #hambutton
