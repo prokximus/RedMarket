@@ -9,7 +9,10 @@ module.exports = {
     extend: {
       screens: {
         'small': {'max':'775px'},
-        'notSmall':{'min':'775px'}
+        'notSmall':{'min':'775px'},
+      },
+      fontFamily: {
+        'ubuntu': ['ubuntu']
       }
     },
   },
