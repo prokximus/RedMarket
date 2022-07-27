@@ -44,16 +44,16 @@ function Navbar() {
 						</div>
 						<Link href={"/"}>
 							<a className="flex title-font font-medium items-center text-white  md:mb-0">
-								<div className="font-bold font-ubuntu px-4 text-3xl">
+								{/* <div className="font-bold font-ubuntu px-4 text-3xl">
 									Logo Here
-								</div>
-								{/* <picture>
+								</div> */}
+								<picture>
 									<img
-										src="/logo.png"
+										src="/logo-sec.png"
 										alt=""
-										className=" w-[150px]  h-[40px] lg:w-[200px] pl-4 lg:h-[80px] object-contain justify-end "
+										className=" w-[150px] h-[40px] lg:w-[220px] pl-4 lg:h-[90px] object-contain justify-end"
 									/>
-								</picture> */}
+								</picture>
 							</a>
 						</Link>
 					</div>
@@ -92,7 +92,7 @@ function Navbar() {
 							</Link>
 						</nav>
 
-						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-red-400 border-0 py-1 px-3 focus:outline-none hover:bg-red-500 font-semibold rounded-lg text-base text-white hover:scale-110 hover:rounded-xl">
+						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-gray-700 text-xl border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 font-semibold rounded-lg  text-white hover:scale-110 hover:rounded-xl">
 							<Link href={"/login"}>Login</Link>
 						</button>
 					</div>
