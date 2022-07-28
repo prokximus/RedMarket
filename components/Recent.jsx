@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
 import Link from "next/link";
 import builder from "@sanity/image-url";
 
@@ -18,7 +17,7 @@ function Recent({ product }) {
 						{product.map((item) => (
 							<div className="p-4 w-full md:w-1/3" key={item._id}>
 								<div className="h-full border-2 border-gray-200 group transition-all duration-200 border-opacity-60 rounded-lg overflow-hidden">
-									<a href="/">
+									<div >
 										<img
 											className="lg:h-[320px] transition-all duration-200 grayscale-[40%] group-hover:grayscale-0 h-[240px] py-4 mx-auto object-cover object-center"
 											src={item.img_url}
@@ -26,7 +25,7 @@ function Recent({ product }) {
 										/>
 										<div className="p-6">
 											<h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-												{item.cate}
+												{/* {item.cate} */}
 											</h2>
 											<h1 className="title-font truncate text-lg font-medium text-gray-900 mb-3">
 												{item.title}
@@ -66,7 +65,7 @@ function Recent({ product }) {
 												</div>
 											</div>
 										</div>
-									</a>
+									</div>
 								</div>
 							</div>
 						))}

@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-import React from "react";
+import Image from 'next/image'
 
 function Hero() {
 	return (
@@ -11,10 +10,12 @@ function Hero() {
 							{"Get best sale's only on! "}
 							<br className="hidden lg:inline-block" />
 							<div className="">
-								<img
+								<Image
 									className="object-cover w-[150px] mt-2 mx-auto object-center rounded"
 									alt="hero"
 									src="/logo.png"
+									width={220}
+									height={50}
 								/>
 							</div>
 						</h1>
