@@ -8,18 +8,18 @@ import { useState } from "react";
 function Navbar() {
 	const [width, setwidth] = useState("w-0"); // useState defines the initial width to zero for the hamburger
 	const [visibility, setvisibility] = useState("overflow-x-hidden"); // useState defines the initial visibility to show the menu only when clicked
-	const [blur, setblur] = useState('hidden')
+	const [blur, setblur] = useState("hidden");
 
 	const openHam = () => {
 		setwidth("w-[55%]"); // setwidth to the desired width for the hamburger menu by button id #hambutton
-		setblur('block')
+		setblur("block");
 		setTimeout(() => {
 			setvisibility("overflow-x-visible"); // this will make the close button visible
 		}, 200);
 	};
 	const closeHam = () => {
 		setwidth("w-0"); // setwidth to 0 for the Hamburger menu by close button, it makes hamburger invisible when clicked
-		setblur('hidden')
+		setblur("hidden");
 		setTimeout(() => {
 			setvisibility("overflow-x-hidden"); // this will make the hamburger invisible when not in use
 		}, 200);
@@ -49,11 +49,11 @@ function Navbar() {
 									Logo Here
 								</div> */}
 								<picture className="flex justify-end">
-									<img
-										src="/logo-sec.png"
-										alt=""
-										className=" w-[150px] h-[40px] lg:w-[220px] pl-4 lg:h-[90px] "
-									/>
+									<Link href="/">
+										<div className="text-2xl sm:text-4xl px-2  py-2 uppercase">
+											<span className="text-[red]">Red </span> Market
+										</div>
+									</Link>
 								</picture>
 							</a>
 						</Link>
@@ -93,7 +93,7 @@ function Navbar() {
 							</Link>
 						</nav>
 
-						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-gray-700 lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 font-semibold rounded-lg  text-white hover:scale-110 hover:rounded-xl">
+						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 font-semibold rounded-full  text-white hover:scale-110">
 							<Link href={"/login"}>Login</Link>
 						</button>
 					</div>
