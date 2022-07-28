@@ -9,6 +9,21 @@ export default {
       type: 'string',
     },
     {
+      name: 'cate',
+      title: 'Cate',
+      type: 'string',
+    },
+    {
+      name: 'meta_desc',
+      title: 'Meta Description',
+      type: 'string',
+    },
+    {
+      name: 'img_url',
+      title: 'Image Url',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
