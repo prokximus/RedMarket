@@ -26,11 +26,12 @@ function Navbar() {
 	};
 	return (
 		<>
+			<div
+				className={`absolute ${blur} top-0 w-full h-full bg-black z-10 transition-all delay-[200ms] opacity-70`}
+			/>
+			{/* This div will make blur effect when hamburger is clicked*/}
 
-		<div className={`absolute ${blur} top-0 w-full h-full bg-black z-10 transition-all delay-[200ms] opacity-70`} />
-		{/* This div will make blur effect when hamburger is clicked*/}
-
-			<header className="text-black body-font bg-black">
+			<header className="text-black body-font bg-black ">
 				<div className="container mx-auto flex flex-wrap pr-5 py-1 justify-between small:justify-start space-x-1 items-center">
 					{/* {" "} */}
 					{/* Justify Start for small devices so that the button and Logo are aligned at left */}
@@ -43,15 +44,15 @@ function Navbar() {
 							</div>
 						</div>
 						<Link href={"/"}>
-							<a className="flex title-font font-medium items-center text-white  md:mb-0">
+							<a className="flex title-font font-medium justify-end items-center text-white  md:mb-0">
 								{/* <div className="font-bold font-ubuntu px-4 text-3xl">
 									Logo Here
 								</div> */}
-								<picture>
+								<picture className="flex justify-end">
 									<img
 										src="/logo-sec.png"
 										alt=""
-										className=" w-[150px] h-[40px] lg:w-[220px] pl-4 lg:h-[90px] object-contain justify-end"
+										className=" w-[150px] h-[40px] lg:w-[220px] pl-4 lg:h-[90px] "
 									/>
 								</picture>
 							</a>
@@ -59,7 +60,7 @@ function Navbar() {
 					</div>
 					{/* The below div contains all the navigation links and login button */}
 					<div className="flex space-x-2 items-center justify-end pr-10 md:pr-4 small:pr-0">
-						<nav className="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center small:hidden space-x-4 mr-4">
+						<nav className="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center w-full small:hidden space-x-4 mr-4">
 							<Link href={"/"}>
 								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
 									Home
@@ -92,7 +93,7 @@ function Navbar() {
 							</Link>
 						</nav>
 
-						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-gray-700 text-xl border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 font-semibold rounded-lg  text-white hover:scale-110 hover:rounded-xl">
+						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-gray-700 lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 font-semibold rounded-lg  text-white hover:scale-110 hover:rounded-xl">
 							<Link href={"/login"}>Login</Link>
 						</button>
 					</div>
