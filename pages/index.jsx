@@ -4,7 +4,6 @@ import Image from "next/image";
 import Recent from "../components/Recent";
 import Hero from "../components/Hero";
 
-
 export default function Home({ product }) {
 	const client = createClient({
 		projectId: "e12bk888",
