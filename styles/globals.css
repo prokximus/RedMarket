@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .bg-gradient {
-	background: rgb(252, 252, 252);
+	background: rgb(247, 219, 219);
 	background: radial-gradient(
 		circle,
-		rgba(252, 252, 252, 1) 1%,
-		rgba(236, 236, 236, 1) 100%
+		rgba(247, 219, 219, 1) 33%,
+		rgba(255, 193, 193, 1) 100%
 	);
 }

@@ -92,7 +92,7 @@ function Navbar() {
 							</Link>
 						</nav>
 
-						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 font-semibold rounded-full  text-white hover:scale-110">
+						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 font-semibold rounded-lg  text-white hover:scale-110">
 							<Link href={"/login"}>Login</Link>
 						</button>
 					</div>

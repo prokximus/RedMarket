@@ -25,10 +25,22 @@ function Exclusive({ exclusive }) {
 							<h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
 								{item.title}
 							</h1>
-							<p className="mb-8 leading-relaxed ">{item.meta_desc}</p>
+							<p className="mb-8 leading-relaxed text-xl">{item.meta_desc}</p>
 							<div className="flex justify-center">
-								<button className="inline-flex text-white hover:scale-110 transition-all duration-200 border-0 py-2 px-6 focus:outline-none bg-red-400 hover:bg-red-500 rounded-xl text-lg">
+								<button className="inline-flex items-center text-white hover:scale-110 transition-all duration-200 border-0 py-2 px-6 focus:outline-none bg-red-400 hover:bg-red-500 rounded-xl text-lg">
 									View Product
+									<svg
+										className="w-6 h-6 ml-2"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+										strokeWidth="2"
+										fill="none"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									>
+										<path d="M5 12h14"></path>
+										<path d="M12 5l7 7-7 7"></path>
+									</svg>
 								</button>
 							</div>
 						</div>
