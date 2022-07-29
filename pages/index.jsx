@@ -3,14 +3,15 @@ import { createClient } from "next-sanity";
 import Image from "next/image";
 import Recent from "../components/Recent";
 import Hero from "../components/Hero";
+import Exclusive from "../components/Exclusive";
 
-export default function Home({ product }) {
+export default function Home({ product, exclusive }) {
 	const client = createClient({
 		projectId: "e12bk888",
 		dataset: "production",
 		useCdn: true,
 	});
-	console.log(product);
+	console.log(exclusive);
 	return (
 		<div className="">
 			<Navbar></Navbar>
@@ -25,6 +26,7 @@ export default function Home({ product }) {
 				/>
 			</div>
 			<Recent product={product}></Recent>
+			<Exclusive exclusive={exclusive}></Exclusive>
 		</div>
 	);
 }
@@ -38,9 +40,13 @@ export async function getServerSideProps(context) {
 
 	const query = `*[_type == 'product'][0...3]`;
 	const product = await client.fetch(query);
+
+	const exclusiveQuery = `*[_type == 'Exclusive'][0...1]`
+	const exclusive = await client.fetch(exclusiveQuery)
+
 	return {
 		props: {
-			product,
+			product, exclusive
 		},
 	};
 }

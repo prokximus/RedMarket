@@ -9,7 +9,7 @@ function Hero() {
 						<h1 className="title-font sm:text-4xl uppercase text-2xl mb-4 font-medium text-gray-900">
 							{"Get best sale's only on! "}
 							<br className="hidden lg:inline-block" />
-							<div className="">
+							<div className="mt-2">
 								<Image
 									className="object-cover w-[150px] mt-2 mx-auto object-center rounded"
 									alt="hero"

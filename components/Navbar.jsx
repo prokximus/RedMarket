@@ -49,7 +49,7 @@ function Navbar() {
 								</div> */}
 								<picture className="flex justify-end">
 									<Link href="/">
-										<div className="text-2xl sm:text-4xl px-2  py-2 uppercase">
+										<div className="text-2xl sm:text-4xl whitespace-nowrap px-2  py-2 uppercase">
 											<span className="text-[red]">Red </span> Market
 										</div>
 									</Link>
