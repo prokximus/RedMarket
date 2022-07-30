@@ -19,7 +19,7 @@ function Recent({ product }) {
 										<picture>
 
 										<img
-											className="lg:h-[320px] transition-all duration-200 grayscale-[40%] group-hover:grayscale-0 h-[240px] py-4 mx-auto object-cover object-center"
+											className="lg:h-[320px] transition-all duration-200 h-[240px] py-4 mx-auto object-cover object-center group-hover:scale-105 delay-75"
 											src={item.img_url}
 											alt="Product"
 											/>
