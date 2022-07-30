@@ -4,14 +4,18 @@ import Image from "next/image";
 import Recent from "../components/Recent";
 import Hero from "../components/Hero";
 import Exclusive from "../components/Exclusive";
+import Testimonials from "../components/Testimonials";
 
-export default function Home({ product, exclusive }) {
+export default function Home({ product, exclusive, testimonails }) {
+
 	const client = createClient({
 		projectId: "e12bk888",
 		dataset: "production",
+		apiVersion: "2021-10-21",
 		useCdn: true,
 	});
-	console.log(exclusive);
+	console.log(testimonails);
+
 	return (
 		<div className="">
 			<Navbar></Navbar>
@@ -27,6 +31,7 @@ export default function Home({ product, exclusive }) {
 			</div>
 			<Recent product={product}></Recent>
 			<Exclusive exclusive={exclusive}></Exclusive>
+			<Testimonials testimonails={testimonails}></Testimonials>
 		</div>
 	);
 }
@@ -35,18 +40,24 @@ export async function getServerSideProps(context) {
 	const client = createClient({
 		projectId: "e12bk888",
 		dataset: "production",
+		apiVersion: "2021-10-21",
 		useCdn: false,
 	});
 
 	const query = `*[_type == 'product'][0...3]`;
 	const product = await client.fetch(query);
 
-	const exclusiveQuery = `*[_type == 'Exclusive'][0...1]`
-	const exclusive = await client.fetch(exclusiveQuery)
+	const exclusiveQuery = `*[_type == 'Exclusive'][0...1]`;
+	const exclusive = await client.fetch(exclusiveQuery);
+
+	const testimonailsQuery = `*[_type == 'testimonails' ][0...3]`;
+	const testimonails = await client.fetch(testimonailsQuery);
 
 	return {
 		props: {
-			product, exclusive
+			product,
+			exclusive,
+			testimonails,
 		},
 	};
 }
