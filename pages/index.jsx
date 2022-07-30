@@ -5,6 +5,7 @@ import Recent from "../components/Recent";
 import Hero from "../components/Hero";
 import Exclusive from "../components/Exclusive";
 import Testimonials from "../components/Testimonials";
+import Footer from "../components/Footer";
 
 export default function Home({ product, exclusive, testimonails }) {
 
@@ -32,6 +33,7 @@ export default function Home({ product, exclusive, testimonails }) {
 			<Recent product={product}></Recent>
 			<Exclusive exclusive={exclusive}></Exclusive>
 			<Testimonials testimonails={testimonails}></Testimonials>
+			<Footer></Footer>
 		</div>
 	);
 }
