@@ -10,7 +10,7 @@ function Testimonials({ testimonails }) {
 				<div className="container px-5 py-24 mx-auto">
 					<div className="flex flex-wrap -m-4">
 						{testimonails.map((item) => (
-							<div className="lg:w-1/3  lg:mb-0 mb-6 px-2" key={item._id}>
+							<div className="lg:w-1/3 px-4 lg:mb-0 mb-6" key={item._id}>
 								<div className="h-full bg-gray-100 rounded-lg py-4  text-center">
 									<picture>
 										<img
@@ -19,7 +19,7 @@ function Testimonials({ testimonails }) {
 											src={item.img_url}
 										/>
 									</picture>
-									<p className="leading-relaxed">
+									<p className="leading-relaxed px-4">
 										{item.meta_desc.slice(0, 200)}
 										{item.meta_desc.length >= 200 && "..."}
 									</p>
