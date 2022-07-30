@@ -25,7 +25,7 @@ function Exclusive({ exclusive }) {
 							<h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
 								{item.title}
 							</h1>
-							<p className="mb-8 leading-relaxed text-xl">{item.meta_desc}</p>
+							<p className="mb-8 leading-relaxed text-xl">{item.meta_desc.slice(0,100)}...</p>
 							<div className="flex justify-center">
 								<button className="inline-flex items-center text-white hover:scale-110 transition-all duration-200 border-0 py-2 px-6 focus:outline-none bg-red-400 hover:bg-red-500 rounded-xl text-lg">
 									View Product
