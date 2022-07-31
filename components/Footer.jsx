@@ -19,7 +19,7 @@ function Footer() {
 							</picture>
 						</a>
 						<p className="mt-2 text-sm text-gray-500">
-							Air plant banjo lyft occupy retro adaptogen indego
+							RedMaket an ecommerce site project made with Next JS framework
 						</p>
 					</div>
 					<div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left justify-between text-center">

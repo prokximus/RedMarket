@@ -1,10 +1,10 @@
 import { createClient } from "next-sanity";
 import React from "react";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer";
 import { MdStar } from 'react-icons/md'
 
 
-function mobile({ product }) {
+function Mobile({ product }) {
 	const client = createClient({
 		projectId: "e12bk888",
 		dataset: "production",
@@ -15,9 +15,10 @@ function mobile({ product }) {
 		<div>
 			<section className="text-gray-600 body-font">
 				<div className="container px-5 py-24 mx-auto">
-					<div className="flex flex-wrap -m-4">
+					<div className="flex flex-wrap gap-y-4 px-2 -m-4 justify-center">
 						{product.map((item) => (
-							<div className="w-full md:w-1/3 bg-white rounded-lg shadow-md group p-4" key={item._id}>
+							<div className=" w-full md:w-1/2 lg:w-1/3" key={item._id}>
+							<div className="w-[97%] bg-white rounded-lg shadow-md group p-4" >
 								<a href={`/product/${item.slug.current}`}>
 									<picture>
 										<img className="lg:h-[320px] transition-all duration-200 h-[240px] py-4 mx-auto object-cover object-center group-hover:scale-110" src={item.img_url} alt="product image" loading='lazy' />
@@ -45,6 +46,7 @@ function mobile({ product }) {
 										</div>
 									</div>
 								</a>
+							</div>
 							</div>
 
 							// <div className="p-4 w-full md:w-1/3" key={item._id}>
@@ -115,7 +117,7 @@ function mobile({ product }) {
 	);
 }
 
-export default mobile;
+export default Mobile;
 
 export async function getServerSideProps(context) {
 	const client = createClient({
