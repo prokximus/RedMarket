@@ -105,13 +105,15 @@ function Navbar() {
 			>
 				<div className="relative h-full">
 					<div className="#primary h-full pb-2 px-2">
-						<div className="pt-1">
+						<div className="flex justify-center items-center pt-2">
+						<Link href="/" className="pt-1">
 							{/* Aligning sign in option this to the right */}
 							<img
 								src="/logo.png"
 								alt=""
-								className="w-[150px] h-[40px] lg:w-[200px] pl-4 ml-[0px] lg:h-[80px] object-contain"
+								className="w-[150px] h-[40px] lg:w-[200px] ml-[0px] lg:h-[80px] object-contain"
 							/>
+						</Link>
 						</div>
 						<br />
 						<div className="flex flex-col max-h-screen space-y-3 mx-4 overflow-y-auto">
