@@ -22,6 +22,7 @@
     "react-portable-text": "^0.4.3",
     "react-responsive-carousel": "^3.2.23",
     "reactstrap": "^9.1.2",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "tw-elements": "^1.0.0-alpha12"
   },
   "devDependencies": {

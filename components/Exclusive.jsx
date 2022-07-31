@@ -1,6 +1,7 @@
 import React from "react";
 
 function Exclusive({ exclusive }) {
+	console.log(exclusive);
 	return (
 		<div>
 			<section className="text-gray-900 body-font bg-gradient">
@@ -31,7 +32,7 @@ function Exclusive({ exclusive }) {
 							<div className="flex justify-center">
 								<button className="inline-flex items-center text-white hover:scale-110 transition-all duration-200 border-0 py-2 px-6 focus:outline-none bg-red-400 hover:bg-red-500 rounded-xl text-lg">
 									 <a 
-										// href={`/product/` + item.slug.current} //TODO: Add an seperate Exclusive Folder Including Slug page
+										href={`/exclusive/` + item.slug.current} // // Add an seperate Exclusive Folder Including Slug page
 									 > 
 									 View Product </a> 
 									<svg

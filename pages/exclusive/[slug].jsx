@@ -30,13 +30,13 @@ const Product = ({ product }) => {
 						<h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
 							{product.title}
 						</h1>
-						<p className="mb-8 leading-relaxed">{product.desc}.</p>
+						<p className="mb-8 leading-relaxed">{product.meta_desc}.</p>
 						<p className="my-4 text-xl text-gray-500 font-semibold">
 							{Intl.NumberFormat(`hi-IN`, {
 								currency: `INR`,
 								style: "currency",
 							})
-								.format(product.defaultProductVariant.price)
+								.format(product.price)
 								.replace(".00", "")}
 						</p>
 						<div className="flex justify-center">
@@ -67,7 +67,7 @@ export const getServerSideProps = async (context) => {
 		useCdn: false,
 	});
 	// All queries
-	const query = `*[_type == 'product' && slug.current == '${slug}'][0]`;
+	const query = `*[_type == 'Exclusive' && slug.current == '${slug}'][0]`;
 	const product = await client.fetch(query);
 
 	return {

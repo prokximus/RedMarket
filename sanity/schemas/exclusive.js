@@ -14,6 +14,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'price',
+            title: 'Price',
+            type: 'number',
+        },
+        {
             name: 'meta_desc',
             title: 'Meta Description',
             type: 'string',

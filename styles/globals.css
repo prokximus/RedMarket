@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .bg-gradient {
 	background: rgb(247, 219, 219);
 	background: radial-gradient(
@@ -12,8 +11,14 @@
 	);
 }
 
-	.hover\:rotate-360:hover {
-    --tw-rotate: 360deg;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-
+.hover\:rotate-360:hover {
+	--tw-rotate: 360deg;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+		rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+		scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
+::-webkit-scrollbar {
+	width: 0px;
+}
+

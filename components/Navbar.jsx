@@ -26,11 +26,11 @@ function Navbar() {
 	return (
 		<>
 			<div
-				className={`absolute ${blur} top-0 w-full h-full bg-black z-10 transition-all delay-[200ms] opacity-70`}
+				className={`absolute ${blur} top-0 w-full h-full bg-black  z-10 transition-all delay-[200ms] opacity-70`}
 			/>
 			{/* This div will make blur effect when hamburger is clicked*/}
 
-			<header className="text-black body-font bg-black ">
+			<header className="text-black body-font bg-black">
 				<div className="container mx-auto flex flex-wrap pr-5 py-1 justify-between small:justify-start space-x-1 items-center">
 					{/* {" "} */}
 					{/* Justify Start for small devices so that the button and Logo are aligned at left */}
@@ -49,8 +49,8 @@ function Navbar() {
 								</div> */}
 								<picture className="flex justify-end">
 									<Link href="/">
-										<div className="text-2xl sm:text-4xl whitespace-nowrap px-2  py-2 uppercase">
-											<span className="text-[red]">Red </span> Market
+										<div className="text-2xl sm:text-4xl whitespace-nowrap px-2 py-2 uppercase">
+											<span className="text-[red] ">Red </span> Market
 										</div>
 									</Link>
 								</picture>
@@ -106,14 +106,14 @@ function Navbar() {
 				<div className="relative h-full">
 					<div className="#primary h-full pb-2 px-2">
 						<div className="flex justify-center items-center pt-2">
-						<Link href="/" className="pt-1">
-							{/* Aligning sign in option this to the right */}
-							<img
-								src="/logo.png"
-								alt=""
-								className="w-[150px] h-[40px] lg:w-[200px] ml-[0px] lg:h-[80px] object-contain"
-							/>
-						</Link>
+							<Link href="/" className="pt-1">
+								{/* Aligning sign in option this to the right */}
+								<img
+									src="/logo.png"
+									alt=""
+									className="w-[150px] h-[40px] lg:w-[200px] ml-[0px] lg:h-[80px] object-contain"
+								/>
+							</Link>
 						</div>
 						<br />
 						<div className="flex flex-col max-h-screen space-y-3 mx-4 overflow-y-auto">
