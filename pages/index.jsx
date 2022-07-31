@@ -15,11 +15,9 @@ export default function Home({ product, exclusive, testimonails }) {
 		apiVersion: "2021-10-21",
 		useCdn: true,
 	});
-	console.log(testimonails);
 
 	return (
 		<div className="">
-			<Navbar></Navbar>
 			<Hero></Hero>
 			<div className="md:flex hidden justify-center">
 				<Image
