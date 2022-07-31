@@ -27,6 +27,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'desc',
+      title: 'Description',
+      type: 'string',
+    },
+    {
       name: 'img_url',
       title: 'Image Url',
       type: 'string',

@@ -15,13 +15,12 @@ function Recent({ product }) {
 						{product.map((item) => (
 							<div className="p-4 w-full md:w-1/3" key={item._id}>
 								<div className="h-full border-2 border-gray-200 group transition-all duration-200 border-opacity-60 rounded-lg overflow-hidden">
-									<div >
+									<div>
 										<picture>
-
-										<img
-											className="lg:h-[320px] transition-all duration-200 h-[240px] py-4 mx-auto object-cover object-center group-hover:scale-105 delay-75"
-											src={item.img_url}
-											alt="Product"
+											<img
+												className="lg:h-[320px] transition-all duration-200 h-[240px] py-4 mx-auto object-cover object-center group-hover:scale-105 delay-75"
+												src={item.img_url}
+												alt="Product"
 											/>
 										</picture>
 										<div className="p-6">
@@ -35,7 +34,10 @@ function Recent({ product }) {
 												{item.meta_desc}
 											</p>
 											<div className="flex items-center flex-wrap ">
-												<a className="bg-red-400 hidden group-hover:bg-red-500 px-2 py-1 rounded-lg text-white cursor-pointer hover:scale-110 transition-all duration-200 lg:inline-flex items-center md:mb-2 lg:mb-0">
+												<a
+													href={`/product/` + item.slug.current}
+													className="bg-red-400 hidden group-hover:bg-red-500 px-2 py-1 rounded-lg text-white cursor-pointer hover:scale-110 transition-all duration-200 lg:inline-flex items-center md:mb-2 lg:mb-0"
+												>
 													View Product
 													<svg
 														className="w-4 h-4 ml-2"

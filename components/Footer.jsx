@@ -30,7 +30,7 @@ function Footer() {
 							<nav className="list-none mb-10">
 								<li>
 									<Link className="text-gray-600 hover:text-gray-800 cursor-pointer" href="/products/mobile">
-										Mobiles
+										Phones
 									</Link>
 								</li>
 								<li>
