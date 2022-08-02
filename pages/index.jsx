@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 export default function Home({ product, exclusive, testimonails }) {
 
 	const client = createClient({
-		projectId: "e12bk888",
+		projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
 		dataset: "production",
 		apiVersion: "2021-10-21",
 		useCdn: true,
@@ -38,7 +38,7 @@ export default function Home({ product, exclusive, testimonails }) {
 
 export async function getServerSideProps(context) {
 	const client = createClient({
-		projectId: "e12bk888",
+		projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
 		dataset: "production",
 		apiVersion: "2021-10-21",
 		useCdn: false,

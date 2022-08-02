@@ -5,7 +5,7 @@ import Footer from "../../components/Footer";
 
 const Product = ({ product }) => {
 	const client = createClient({
-		projectId: "9w7gf952",
+		projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
 		dataset: "production",
 		apiVersion: "2021-10-21",
 		useCdn: false,
@@ -61,7 +61,7 @@ export const getServerSideProps = async (context) => {
 	const { slug } = context.query;
 
 	const client = createClient({
-		projectId: "e12bk888",
+		projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
 		dataset: "production",
 		apiVersion: "2021-10-21",
 		useCdn: false,
