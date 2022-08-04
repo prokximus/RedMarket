@@ -80,7 +80,7 @@ function Navbar() {
 									Tablets
 								</a>
 							</Link>
-							<Link href={"/products/computers"}>
+							<Link href={"/products/computer"}>
 								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
 									Computers
 								</a>

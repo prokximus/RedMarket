@@ -5,7 +5,7 @@ import { MdStar } from "react-icons/md";
 
 function tablet({ product }) {
 	const client = createClient({
-		projectId: "e12bk888",
+		projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
 		dataset: "production",
 		apiVersion: "2021-10-21",
 		useCdn: true,
@@ -74,7 +74,7 @@ export default tablet;
 
 export async function getServerSideProps(context) {
 	const client = createClient({
-		projectId: "e12bk888",
+		projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
 		dataset: "production",
 		apiVersion: "2021-10-21",
 		useCdn: false,
