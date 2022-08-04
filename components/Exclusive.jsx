@@ -1,7 +1,6 @@
 import React from "react";
 
 function Exclusive({ exclusive }) {
-	console.log(exclusive);
 	return (
 		<div>
 			<section className="text-gray-900 body-font bg-gradient">
