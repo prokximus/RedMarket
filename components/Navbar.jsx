@@ -122,27 +122,27 @@ function Navbar() {
 									Home
 								</a>
 							</Link>
-							<Link href={"/about"}>
+							<Link href={"products/about"}>
 								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
 									About
 								</a>
 							</Link>
-							<Link href={"/phones"}>
+							<Link href={"products/mobile"}>
 								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
 									Phones
 								</a>
 							</Link>
-							<Link href={"/tablets"}>
+							<Link href={"products/tablets"}>
 								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
 									Tablets
 								</a>
 							</Link>
-							<Link href={"/computers"}>
+							<Link href={"products/computers"}>
 								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
 									Computers
 								</a>
 							</Link>
-							<Link href={"/gaming"}>
+							<Link href={"products/gaming"}>
 								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
 									Gaming
 								</a>
