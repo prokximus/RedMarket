@@ -20,7 +20,7 @@ const Product = ({ product }) => {
 					<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
 						<picture>
 							<img
-								className="object-cover object-center rounded"
+								className="object-cover object-center rounded w-full"
 								alt="hero"
 								src={product.img_url}
 							/>
