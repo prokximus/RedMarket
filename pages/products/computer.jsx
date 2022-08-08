@@ -2,6 +2,7 @@ import React from 'react'
 import {MdStar} from 'react-icons/md'
 import { createClient } from "next-sanity";
 import { useState } from 'react';
+import Footer from '../../components/footer';
 
 function Computer({product}) {
   const client = createClient({
@@ -96,6 +97,7 @@ function Computer({product}) {
 						</div>
 					</div>
 				</section>
+				<Footer></Footer>
 		</div>
 	);
 }
