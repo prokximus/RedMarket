@@ -15,29 +15,52 @@ function Computer({ product }) {
 		useCdn: true,
 	});
 	let Router = useRouter();
-	let width = 5;
 
+	let pagecount = Math.ceil(product.length / 9);
 	let currentPage = Number(Router.query.page);
-
-	let totalpages = width;
-	let totalpagesArray = [];
-
-	for (let index = 1; index < totalpages; index++) {
+	let totalpages = pagecount;
+	let totalpagesArray = []
+	for (let index = 1; index <= totalpages; index++) {
 		const element = index;
 		totalpagesArray.push(element);
 	}
-	console.log(totalpagesArray);
 
-	useEffect(() => {
-		document.getElementById(`list${currentPage}`);
-	});
+	let array = product.length / 9
+        for (let index = 0; index < product.length; index++) {
+            const slicedArray = array;
+            
+        }
+        let startArray = Math.floor(Router.query.page - 1 ) * 9 ;
+        console.log("start array" + startArray)
+        let maxArray = startArray + 9
+
+        if (maxArray > product.length) {maxArray = product.length;}
+
+
+        let Product = (product.slice(startArray,startArray + 9));
+
+
+
+	// const [Product, setProduct] = useState()
+
+
+	// useEffect(() => {
+	// 	const options = { method: 'GET' };
+	// 	const fetchData = async () => {
+	// 		const response = await fetch(`http://localhost:3000/api/pagination?page=${Router.query.page}`, options);
+	// 		const newData = await response.json();
+	// 		setProduct(newData);
+	// 	};
+
+	// 	fetchData();
+	// }, []);
 
 	return (
 		<div>
 			<section className="text-gray-600 body-font">
 				<div className="container px-5 pt-24 mx-auto">
 					<div className="flex flex-wrap gap-y-4 px-2 -m-4 justify-center">
-						{product.map((item) => (
+						{Product.map((item) => (
 							<div className=" w-full md:w-1/2 lg:w-1/3" key={item._id}>
 								<div className="w-[97%] bg-white rounded-lg shadow-md group p-4">
 									<a href={`/product/${item.slug.current}`}>
