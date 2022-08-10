@@ -38,23 +38,6 @@ function Computer({ product }) {
 
 
         let Product = (product.slice(startArray,startArray + 9));
-
-
-
-	// const [Product, setProduct] = useState()
-
-
-	// useEffect(() => {
-	// 	const options = { method: 'GET' };
-	// 	const fetchData = async () => {
-	// 		const response = await fetch(`http://localhost:3000/api/pagination?page=${Router.query.page}`, options);
-	// 		const newData = await response.json();
-	// 		setProduct(newData);
-	// 	};
-
-	// 	fetchData();
-	// }, []);
-
 	return (
 		<div>
 			<section className="text-gray-600 body-font">
