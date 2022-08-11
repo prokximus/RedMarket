@@ -6,6 +6,7 @@ import { useState } from "react";
 import Pagination from "next-pagination";
 import "next-pagination/dist/index.css";
 import { useRouter } from "next/router";
+import Footer from "../../components/Footer";
 
 function Computer({ product }) {
 	const client = createClient({
@@ -157,6 +158,7 @@ function Computer({ product }) {
 					</li>
 				</ul>
 			</nav>
+			<Footer></Footer>
 		</div>
 	);
 }

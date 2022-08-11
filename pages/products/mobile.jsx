@@ -6,6 +6,7 @@ import { useState } from "react";
 import Pagination from "next-pagination";
 import "next-pagination/dist/index.css";
 import { useRouter } from "next/router";
+import Footer from "../../components/Footer";
 
 function Computer({ product }) {
 	const client = createClient({
@@ -19,29 +20,29 @@ function Computer({ product }) {
 	let pagecount = Math.ceil(product.length / 9);
 	let currentPage = Number(Router.query.page);
 	let totalpages = pagecount;
-	let totalpagesArray = []
+	let totalpagesArray = [];
 	for (let index = 1; index <= totalpages; index++) {
 		const element = index;
 		totalpagesArray.push(element);
 	}
 
-	let array = product.length / 9
-        for (let index = 0; index < product.length; index++) {
-            const slicedArray = array;
-            
-        }
-        let startArray = Math.floor(Router.query.page - 1 ) * 9 ;
-		console.log(Router.query.page)
-		if(Router.query.page == undefined) {
-			startArray = 0
-		}
-        console.log("start array" + startArray)
-        let maxArray = startArray + 9
+	let array = product.length / 9;
+	for (let index = 0; index < product.length; index++) {
+		const slicedArray = array;
+	}
+	let startArray = Math.floor(Router.query.page - 1) * 9;
+	console.log(Router.query.page);
+	if (Router.query.page == undefined) {
+		startArray = 0;
+	}
+	console.log("start array" + startArray);
+	let maxArray = startArray + 9;
 
-        if (maxArray > product.length) {maxArray = product.length;}
+	if (maxArray > product.length) {
+		maxArray = product.length;
+	}
 
-
-        let Product = (product.slice(startArray,startArray + 9));
+	let Product = product.slice(startArray, startArray + 9);
 	return (
 		<div>
 			<section className="text-gray-600 body-font">
@@ -157,6 +158,7 @@ function Computer({ product }) {
 					</li>
 				</ul>
 			</nav>
+			<Footer></Footer>
 		</div>
 	);
 }
