@@ -22,10 +22,10 @@ const About = ({ team }) => {
 							{"RedMaket an ecommerce site project made by Syed Adeeb and Muhammad Mubashshir Ali"}
 						</p>
 					</div>
-					<div className=" flex justify-between mx-2 overflow-hidden">
+					<div className=" flex flex-wrap justify-center lg:space-x-8 overflow-hidden">
 
 						{team.map((item) => (
-							<div className=" lg:w-1/2 -m-4" key={item._id}>
+							<div className=" w-full lg:w-1/2 my-2 -mx-4" key={item._id}>
 								<div className="p-4  bg-gray-100 rounded-lg">
 									<div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
 										<picture>
