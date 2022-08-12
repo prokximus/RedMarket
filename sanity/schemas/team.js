@@ -24,6 +24,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'InstaLink',
+            title: 'InstaLink',
+            type: 'string',
+        },
+        {
             name: 'GithubLink',
             title: 'GithubLink',
             type: 'string',
