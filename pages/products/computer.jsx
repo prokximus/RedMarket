@@ -34,7 +34,8 @@ function Computer({ product }) {
         let startArray = Math.floor(Router.query.page - 1 ) * 9 ;
 		console.log(Router.query.page)
 		if(Router.query.page == undefined) {
-			startArray = 0
+			startArray = 0;
+			currentPage = 1;
 		}
         console.log("start array" + startArray)
         let maxArray = startArray + 9
@@ -124,6 +125,7 @@ function Computer({ product }) {
 						</a>
 					</li>
 					{totalpagesArray.map((item) => {
+						if(item !== currentPage) {
 						return (
 							<li id={`list${item}`} key={`hello?${item}`} className="py-10">
 								<a
@@ -133,7 +135,19 @@ function Computer({ product }) {
 									{item}
 								</a>
 							</li>
-						);
+						);}
+						else {
+							return (
+								<li id={`list${item}`} key={`hello?${item}`} className="py-10">
+									<a
+										href={`?page=${item}`}
+										className="py-2 px-3 leading-tight text-white bg-black border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+									>
+										{item}
+									</a>
+								</li>
+							);
+						}
 					})}
 					<li>
 						<a
