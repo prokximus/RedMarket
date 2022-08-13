@@ -6,8 +6,8 @@ import Hero from "../components/Hero";
 import Exclusive from "../components/Exclusive";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
-import Flowbite from "flowbite-react"
-import { Carousel } from "flowbite-react/lib/cjs/components";
+// import Flowbite from "flowbite-react"
+// import { Carousel } from "flowbite-react/lib/cjs/components";
 
 export default function Home({ product, exclusive, testimonails }) {
 

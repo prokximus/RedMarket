@@ -118,39 +118,39 @@ function Navbar() {
 						<br />
 						<div className="flex flex-col max-h-screen space-y-3 mx-4 overflow-y-auto">
 							<Link href={"/"}>
-								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
+								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
 									Home
 								</a>
 							</Link>
-							<Link href={"products/about"}>
-								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
+							<Link href={"/about"}>
+								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
 									About
 								</a>
 							</Link>
-							<Link href={"products/mobile"}>
-								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
+							<Link href="/products/mobile">
+								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
 									Phones
 								</a>
 							</Link>
-							<Link href={"products/tablets"}>
-								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
+							<Link href="/products/tablets">
+								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
 									Tablets
 								</a>
 							</Link>
-							<Link href={"products/computers"}>
-								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
+							<Link href="/products/computer">
+								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
 									Computers
 								</a>
 							</Link>
-							<Link href={"products/gaming"}>
-								<a className="hover:text-red-600 text-black hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
+							<Link href="/products/gaming">
+								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
 									Gaming
 								</a>
 							</Link>
 							<br />
 							<br />
-							<Link href={"/login"} className=" ">
-								<a className="hover:text-red-600 text-white bg-black max-w-fit px-4 py-2 rounded-lg flex items-center  hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
+							<Link href="/login" className=" ">
+								<a className="text-white bg-black max-w-fit px-4 py-2 rounded-lg flex items-center transition-all duration-200 font-semibold cursor-pointer">
 									<CgProfile className="mr-2" /> Login
 								</a>
 							</Link>
