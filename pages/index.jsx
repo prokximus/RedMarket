@@ -6,6 +6,8 @@ import Hero from "../components/Hero";
 import Exclusive from "../components/Exclusive";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
+import Flowbite from "flowbite-react"
+import { Carousel } from "flowbite-react/lib/cjs/components";
 
 export default function Home({ product, exclusive, testimonails }) {
 
@@ -19,6 +21,49 @@ export default function Home({ product, exclusive, testimonails }) {
 	return (
 		<div className="">
 			<Hero></Hero>
+			<div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+
+				<Carousel>
+					<picture>
+						<img
+							className="w-full"
+							src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
+							alt="..."
+						/>
+					</picture>
+					<picture>
+						<img
+							className="w-full"
+							src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
+							alt="..."
+						/>
+
+					</picture>
+					<picture>
+						<img
+							className="w-full"
+							src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+							alt="..."
+						/>
+
+					</picture>
+					<picture>
+						<img
+							className="w-full"
+							src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
+							alt="..."
+						/>
+
+
+					</picture>
+					<picture>
+						<img
+							className="w-full"
+							src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
+							alt="..."
+						/></picture>
+				</Carousel>
+			</div>
 			<div className="md:flex hidden justify-center">
 				<Image
 					width={1500}

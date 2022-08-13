@@ -3,6 +3,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./node_modules/flowbite/**/*.js",
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
     extend: {
@@ -11,11 +12,11 @@ module.exports = {
         'notSmall': { 'min': '775px' },
       },
       fontFamily: {
-        'ubuntu': [ 'ubuntu' ]
+        'ubuntu': ['ubuntu']
       }
     },
   },
   plugins: [
-    
+    require('flowbite/plugin')
   ]
 }
