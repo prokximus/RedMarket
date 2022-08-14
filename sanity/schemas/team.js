@@ -29,6 +29,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'WebUrl',
+            title: 'WebUrl',
+            type: 'string',
+        },
+        {
             name: 'GithubLink',
             title: 'GithubLink',
             type: 'string',
