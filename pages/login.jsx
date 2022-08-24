@@ -10,13 +10,13 @@ const Login = () => {
 		setLength(val.target.value.length);
 	}
 
-	// Will get the email 
+	// Will get the email
 	function getLoginEmail(val) {
 		setEmail(val.target.value);
 	}
 
-	// Check if the password is >= 6 and emails includes '@' and '.com'
-	let test = passlength >= 6 && email.includes("@" && ".com");
+	// Check if the password is >= 6 and emails includes '@gmail.com'
+	let test = passlength >= 6 && email.includes("@gmail.com");
 
 	return (
 		<div>
