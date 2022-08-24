@@ -1,8 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Footer from "../components/Footer";
 
 const Login = () => {
-	const [isTrue, setisTrue] = useState(false);
+	const [passlength, setLength] = useState(0);
+	const [email, setEmail] = useState("");
+
+	// Will get the password length
+	function getLoginPasswordLength(val) {
+		setLength(val.target.value.length);
+	}
+
+	// Will get the email 
+	function getLoginEmail(val) {
+		setEmail(val.target.value);
+	}
+
+	// Check if the password is >= 6 and emails includes '@' and '.com'
+	let test = passlength >= 6 && email.includes("@" && ".com");
 
 	return (
 		<div>
@@ -21,14 +35,17 @@ const Login = () => {
 										type="text"
 										className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
 										placeholder="Email address"
+										onChange={getLoginEmail}
 									/>
 								</div>
 
 								<div className="mb-6">
 									<input
+										id="pass"
 										type="password"
 										className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
 										placeholder="Password"
+										onChange={getLoginPasswordLength}
 									/>
 								</div>
 
@@ -38,7 +55,6 @@ const Login = () => {
 											type="checkbox"
 											className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-red-600 checked:border-red-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
 											id="exampleCheck3"
-											onClick={() => {return isTrue}}
 										/>
 										<label
 											className="form-check-label inline-block text-gray-800"
@@ -57,9 +73,10 @@ const Login = () => {
 
 								<button
 									type="submit"
-									className="inline-block px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+									className="inline-block disabled:opacity-40 px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
 									data-mdb-ripple="true"
 									data-mdb-ripple-color="light"
+									disabled={!test}
 								>
 									Log in
 								</button>
