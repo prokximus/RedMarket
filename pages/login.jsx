@@ -1,5 +1,6 @@
-import { useState } from "react";
-import Footer from "../components/Footer";
+/* eslint-disable @next/next/no-html-link-for-pages */
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
 	const [passlength, setLength] = useState(0);
@@ -15,8 +16,28 @@ const Login = () => {
 		setEmail(val.target.value);
 	}
 
-	// Check if the password is >= 6 and emails includes '@gmail.com'
-	let test = passlength >= 6 && email.includes("@gmail.com");
+	// Will redirect to the home page 
+	useEffect(() => {
+		// For normal login
+		document.getElementById("loginButton").onclick = function () {
+			location.href = "/";
+		};
+		// For facebook login
+		document.getElementById("facebook-button").onclick = function () {
+			location.href = "/";
+		};
+		// For twitter login
+		document.getElementById("twitter-button").onclick = function () {
+			location.href = "/";
+		};
+	}, []);
+
+	// Will slice the domain name
+	const domainName = email.slice(email.indexOf("@") + 1, email.indexOf("."));
+	// Will add domain name between @ and .com 
+	const domainCheck = `@${domainName}.com`;
+	// Check if the password is >= 6 and emails includes '@domian.com'
+	const test = passlength >= 6 && email.includes(domainCheck) && domainName.length >= 1;
 
 	return (
 		<div>
@@ -38,7 +59,6 @@ const Login = () => {
 										onChange={getLoginEmail}
 									/>
 								</div>
-
 								<div className="mb-6">
 									<input
 										id="pass"
@@ -48,7 +68,6 @@ const Login = () => {
 										onChange={getLoginPasswordLength}
 									/>
 								</div>
-
 								<div className="flex justify-between items-center mb-6">
 									<div className="form-group form-check">
 										<input
@@ -70,27 +89,34 @@ const Login = () => {
 										Forgot password?
 									</a>
 								</div>
-
+								<Toaster position="top-center" reverseOrder={false} />
 								<button
-									type="submit"
+									type="button"
+									id="loginButton"
 									className="inline-block disabled:opacity-40 px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
 									data-mdb-ripple="true"
 									data-mdb-ripple-color="light"
 									disabled={!test}
+									onClick={() => {
+										toast.success("Login successful!");
+									}}
 								>
 									Log in
 								</button>
-
 								<div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
 									<p className="text-center font-semibold mx-4 mb-0">OR</p>
 								</div>
-
-								<a
+								<button
+									type="button"
+									id="facebook-button"
 									className="px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 bg-[#3b5998] active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
-									href="#!"
+									href="/"
 									role="button"
 									data-mdb-ripple="true"
 									data-mdb-ripple-color="light"
+									onClick={() => {
+										toast.success("Facebook Login successful!");
+									}}
 								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -103,13 +129,18 @@ const Login = () => {
 										/>
 									</svg>
 									Continue with Facebook
-								</a>
-								<a
+								</button>
+								<button
+									type="button"
+									id="twitter-button"
 									className="px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 bg-[#55acee] active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center"
-									href="#!"
+									href="/"
 									role="button"
 									data-mdb-ripple="true"
 									data-mdb-ripple-color="light"
+									onClick={() => {
+										toast.success("Twitter Login successful!");
+									}}
 								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -122,13 +153,12 @@ const Login = () => {
 										/>
 									</svg>
 									Continue with Twitter
-								</a>
+								</button>
 							</form>
 						</div>
 					</div>
 				</div>
 			</section>
-			<Footer></Footer>
 		</div>
 	);
 };
