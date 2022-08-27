@@ -22,3 +22,7 @@
 	width: 0px;
 }
 
+.bullet {
+	list-style: disc;
+	margin-left: 20px;
+}

@@ -59,7 +59,7 @@ function Navbar() {
 						</Link>
 					</div>
 					{/* The below div contains all the navigation links and login button */}
-					<div className="flex font-poppins space-x-2 items-center justify-end pr-10 md:pr-4 small:pr-0">
+					<div className="flex font-poppins font-semibold space-x-2 items-center justify-end pr-10 md:pr-4 small:pr-0">
 						<nav className="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center w-full small:hidden space-x-4 mr-4">
 							<Link href={"/"}>
 								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 cursor-pointer">
@@ -99,7 +99,6 @@ function Navbar() {
 						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
 							<AiOutlineShoppingCart className="text-white text-3xl" />
 						</button>
-
 					</div>
 				</div>
 			</header>
