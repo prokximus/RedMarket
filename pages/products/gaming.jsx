@@ -87,7 +87,7 @@ function Computer({ product }) {
 														.replace(".00", "")}
 												</span>
 												<button className="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-													Add to cart
+													View Product
 												</button>
 											</div>
 										</div>
@@ -125,17 +125,18 @@ function Computer({ product }) {
 						</a>
 					</li>
 					{totalpagesArray.map((item) => {
-						if(item !== currentPage) {
-						return (
-							<li id={`list${item}`} key={`hello?${item}`} className="py-10">
-								<a
-									href={`?page=${item}`}
-									className="py-2 px-3 leading-tight text-gray-500 bg-white  border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
-								>
-									{item}
-								</a>
-							</li>
-						);}
+						if (item !== currentPage) {
+							return (
+								<li id={`list${item}`} key={`hello?${item}`} className="py-10">
+									<a
+										href={`?page=${item}`}
+										className="py-2 px-3 leading-tight text-gray-500 bg-white  border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+									>
+										{item}
+									</a>
+								</li>
+							);
+						}
 						else {
 							return (
 								<li id={`list${item}`} key={`hello?${item}`} className="py-10">

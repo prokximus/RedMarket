@@ -1,26 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { AiOutlineShoppingCart } from "react-icons/ai"
 import { GoThreeBars } from "react-icons/go";
 import { CgProfile, CgClose } from "react-icons/cg";
 import { useState } from "react";
 
 function Navbar() {
-	const [width, setwidth] = useState("w-0"); // useState defines the initial width to zero for the hamburger
-	const [visibility, setvisibility] = useState("overflow-x-hidden"); // useState defines the initial visibility to show the menu only when clicked
+	const [hamwidth, sethamwidth] = useState("w-0"); // useState defines the initial hamwidth to zero for the hamburger
+	const [hamvisibility, sethamvisibility] = useState("overflow-x-hidden"); // useState defines the initial hamvisibility to show the menu only when clicked
 	const [blur, setblur] = useState("hidden");
 
 	const openHam = () => {
-		setwidth("w-[55%]"); // setwidth to the desired width for the hamburger menu by button id #hambutton
+		sethamwidth("w-[55%]"); // sethamwidth to the desired hamwidth for the hamburger menu by button id #hambutton
 		setblur("block");
 		setTimeout(() => {
-			setvisibility("overflow-x-visible"); // this will make the close button visible
+			sethamvisibility("overflow-x-visible"); // this will make the close button visible
 		}, 200);
 	};
 	const closeHam = () => {
-		setwidth("w-0"); // setwidth to 0 for the Hamburger menu by close button, it makes hamburger invisible when clicked
+		sethamwidth("w-0"); // sethamwidth to 0 for the Hamburger menu by close button, it makes hamburger invisible when clicked
 		setblur("hidden");
 		setTimeout(() => {
-			setvisibility("overflow-x-hidden"); // this will make the hamburger invisible when not in use
+			sethamvisibility("overflow-x-hidden"); // this will make the hamburger invisible when not in use
 		}, 200);
 	};
 	return (
@@ -58,50 +59,54 @@ function Navbar() {
 						</Link>
 					</div>
 					{/* The below div contains all the navigation links and login button */}
-					<div className="flex space-x-2 items-center justify-end pr-10 md:pr-4 small:pr-0">
+					<div className="flex font-poppins space-x-2 items-center justify-end pr-10 md:pr-4 small:pr-0">
 						<nav className="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center w-full small:hidden space-x-4 mr-4">
 							<Link href={"/"}>
-								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
-									Home
+								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 cursor-pointer">
+									HOME
 								</a>
 							</Link>
 							<Link href={"/about"}>
-								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
-									About
+								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 cursor-pointer">
+									ABOUT
 								</a>
 							</Link>
 							<Link href={"/products/mobile"}>
-								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
-									Phones
+								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 cursor-pointer">
+									PHONES
 								</a>
 							</Link>
 							<Link href={"/products/tablets"}>
-								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
-									Tablets
+								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 cursor-pointer">
+									TABLETS
 								</a>
 							</Link>
 							<Link href={"/products/computer"}>
-								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
-									Computers
+								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 cursor-pointer">
+									COMPUTERS
 								</a>
 							</Link>
 							<Link href={"/products/gaming"}>
-								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 font-semibold cursor-pointer">
-									Gaming
+								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 cursor-pointer">
+									GAMING
 								</a>
 							</Link>
 						</nav>
 
-						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 font-semibold rounded-lg  text-white hover:scale-110">
-							<Link href={"/login"}>Login</Link>
+						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
+							<Link href={"/login"}>LOGIN</Link>
 						</button>
+						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
+							<AiOutlineShoppingCart className="text-white text-3xl" />
+						</button>
+
 					</div>
 				</div>
 			</header>
 
 			{/* Hamburger Section which will appear on click */}
 			<section
-				className={`notSmall:hidden fixed h-full left-0 top-0 z-20 bg-white transition-all delay-200 ${width} ${visibility}`}
+				className={`notSmall:hidden fixed h-full left-0 top-0 z-20 bg-white transition-all delay-200 ${hamwidth} ${hamvisibility}`}
 			>
 				<div className="relative h-full">
 					<div className="#primary h-full pb-2 px-2">
@@ -118,39 +123,39 @@ function Navbar() {
 						<br />
 						<div className="flex flex-col max-h-screen space-y-3 mx-4 overflow-y-auto">
 							<Link href={"/"}>
-								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
+								<a className="hover:text-red-600 text-black transition-all duration-200 cursor-pointer">
 									Home
 								</a>
 							</Link>
 							<Link href={"/about"}>
-								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
+								<a className="hover:text-red-600 text-black transition-all duration-200 cursor-pointer">
 									About
 								</a>
 							</Link>
 							<Link href="/products/mobile">
-								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
+								<a className="hover:text-red-600 text-black transition-all duration-200 cursor-pointer">
 									Phones
 								</a>
 							</Link>
 							<Link href="/products/tablets">
-								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
+								<a className="hover:text-red-600 text-black transition-all duration-200 cursor-pointer">
 									Tablets
 								</a>
 							</Link>
 							<Link href="/products/computer">
-								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
+								<a className="hover:text-red-600 text-black transition-all duration-200 cursor-pointer">
 									Computers
 								</a>
 							</Link>
 							<Link href="/products/gaming">
-								<a className="hover:text-red-600 text-black transition-all duration-200 font-semibold cursor-pointer">
+								<a className="hover:text-red-600 text-black transition-all duration-200 cursor-pointer">
 									Gaming
 								</a>
 							</Link>
 							<br />
 							<br />
 							<Link href="/login" className=" ">
-								<a className="text-white bg-black max-w-fit px-4 py-2 rounded-lg flex items-center transition-all duration-200 font-semibold cursor-pointer">
+								<a className="text-white bg-black max-w-fit px-4 py-2 rounded-lg flex items-center transition-all duration-200 cursor-pointer">
 									<CgProfile className="mr-2" /> Login
 								</a>
 							</Link>

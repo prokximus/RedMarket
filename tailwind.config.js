@@ -12,7 +12,8 @@ module.exports = {
         'notSmall': { 'min': '775px' },
       },
       fontFamily: {
-        'ubuntu': ['ubuntu']
+        'ubuntu': ['ubuntu'],
+        'poppins': ['poppins']
       }
     },
   },
