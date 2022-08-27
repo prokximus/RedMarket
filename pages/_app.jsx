@@ -1,8 +1,52 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
+	const [Cart, setCart] = useState({})
+	const [subTotal, setsubTotal] = useState(0)
+
+	const clearCart = () => {
+		setCart({})
+		saveCart({})
+		alert('Cart has been cleared')
+	}
+
+	const saveCart = (cartItem) => {
+		localStorage.setItem("cart", JSON.stringify(cartItem))
+		let subt = 0;
+		let keys = Object.keys(Cart)
+		for (let i = 0; i < keys.length; i++) {
+			subt += Cart[keys[i]].price * Cart[keys[i]].qty
+		}
+		setsubTotal(subt)
+	}
+
+	const addToCart = (slug, title, price, img_url, cate) => {
+		let myCart = Cart
+		if (slug in Cart) {
+			myCart[slug].qty = Cart[slug].qty + 1;
+		}
+		else {
+			myCart[slug] = { qty: 1, title, price, img_url, cate }
+		}
+		setCart(myCart)
+		saveCart(Cart)
+		console.log(Cart)
+	}
+
+	const removeFromCart = (slug) => {
+		let myCart = Cart
+		if (slug in Cart) {
+			myCart[slug].qty = Cart[slug].qty - 1;
+		}
+		if (myCart[slug].qty <= 0) {
+			delete myCart[slug]
+		}
+		setCart(myCart)
+		saveCart(myCart)
+	}
 	return (
 		<>
 			<Head>
@@ -11,7 +55,7 @@ function MyApp({ Component, pageProps }) {
 				<link rel="icon" href="/icon.png" />
 			</Head>
 			<Navbar />
-			<Component {...pageProps} />
+			<Component {...pageProps} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} />
 		</>
 	);
 }

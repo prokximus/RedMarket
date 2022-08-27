@@ -3,12 +3,15 @@ import React, { useEffect } from "react";
 import { MdStar } from "react-icons/md";
 import { createClient } from "next-sanity";
 import { useState } from "react";
-import Pagination from "next-pagination";
 import "next-pagination/dist/index.css";
 import { useRouter } from "next/router";
 import Footer from "../../components/Footer";
+import Link from "next/link";
 
-function Computer({ product }) {
+function Computer({ product, addToCart }) {
+
+
+
 	const client = createClient({
 		projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
 		dataset: "production",
@@ -31,19 +34,20 @@ function Computer({ product }) {
 		const slicedArray = array;
 	}
 	let startArray = Math.floor(Router.query.page - 1) * 9;
-	console.log(Router.query.page);
 	if (Router.query.page == undefined) {
 		startArray = 0;
 		currentPage = 1;
 	}
-	console.log("start array" + startArray);
 	let maxArray = startArray + 9;
 
 	if (maxArray > product.length) {
 		maxArray = product.length;
 	}
 
+
 	let Product = product.slice(startArray, startArray + 9);
+
+	console.log(Product[0])
 	return (
 		<div>
 			<section className="text-gray-600 body-font">
@@ -52,7 +56,7 @@ function Computer({ product }) {
 						{Product.map((item) => (
 							<div className=" w-full md:w-1/2 lg:w-1/3" key={item._id}>
 								<div className="w-[97%] bg-white rounded-lg shadow-md group p-4">
-									<a href={`/product/${item.slug.current}`}>
+									<Link href={`/product/${item.slug.current}`}><div>
 										<picture>
 											<img
 												className="lg:h-[320px] transition-all duration-200 h-[240px] py-4 mx-auto object-cover object-center group-hover:scale-110"
@@ -87,11 +91,11 @@ function Computer({ product }) {
 														.replace(".00", "")}
 												</span>
 												<button className="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-													Add to cart
+													View Product
 												</button>
 											</div>
 										</div>
-									</a>
+									</div></Link>
 								</div>
 							</div>
 						))}
@@ -125,17 +129,18 @@ function Computer({ product }) {
 						</a>
 					</li>
 					{totalpagesArray.map((item) => {
-						if(item !== currentPage) {
-						return (
-							<li id={`list${item}`} key={`hello?${item}`} className="py-10">
-								<a
-									href={`?page=${item}`}
-									className="py-2 px-3 leading-tight text-gray-500 bg-white  border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
-								>
-									{item}
-								</a>
-							</li>
-						);}
+						if (item !== currentPage) {
+							return (
+								<li id={`list${item}`} key={`hello?${item}`} className="py-10">
+									<a
+										href={`?page=${item}`}
+										className="py-2 px-3 leading-tight text-gray-500 bg-white  border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+									>
+										{item}
+									</a>
+								</li>
+							);
+						}
 						else {
 							return (
 								<li id={`list${item}`} key={`hello?${item}`} className="py-10">
