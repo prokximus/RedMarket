@@ -16,7 +16,7 @@ const Login = () => {
 		setEmail(val.target.value);
 	}
 
-	// Will redirect to the home page 
+	// Will redirect to the home page
 	useEffect(() => {
 		// For normal login
 		document.getElementById("loginButton").onclick = function () {
@@ -34,10 +34,16 @@ const Login = () => {
 
 	// Will slice the domain name
 	const domainName = email.slice(email.indexOf("@") + 1, email.indexOf("."));
-	// Will add domain name between @ and .com 
-	const domainCheck = `@${domainName}.com`;
+	// Will check the name before @
+	const checkName = email.slice(0, email.indexOf("@"));
+	// Will make a proper email
+	const emailCheck = `${checkName}@${domainName}.com`;
 	// Check if the password is >= 6 and emails includes '@domian.com'
-	const test = passlength >= 6 && email.includes(domainCheck) && domainName.length >= 1;
+
+	const test =
+		passlength >= 6 &&
+		email.includes(emailCheck) &&
+		domainName.length && checkName.length >= 1;
 
 	return (
 		<div>
@@ -53,7 +59,7 @@ const Login = () => {
 							<form>
 								<div className="mb-6">
 									<input
-										type="text"
+										type="email"
 										className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
 										placeholder="Email address"
 										onChange={getLoginEmail}
@@ -98,7 +104,7 @@ const Login = () => {
 									data-mdb-ripple-color="light"
 									disabled={!test}
 									onClick={() => {
-										toast.success("Login successful!");
+										toast.success("Login successful!", {style:{border: "2px solid black"}});
 									}}
 								>
 									Log in
