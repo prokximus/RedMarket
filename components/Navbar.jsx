@@ -4,10 +4,19 @@ import { AiOutlineShoppingCart } from "react-icons/ai"
 import { GoThreeBars } from "react-icons/go";
 import { CgProfile, CgClose } from "react-icons/cg";
 import { useState } from "react";
+import { useEffect } from "react";
 
-function Navbar() {
+function Navbar({ Cart, setCart, subTotal, saveCart }) {
+
+
+
 	const [hamwidth, sethamwidth] = useState("w-0"); // useState defines the initial hamwidth to zero for the hamburger
 	const [hamvisibility, sethamvisibility] = useState("overflow-x-hidden"); // useState defines the initial hamvisibility to show the menu only when clicked
+
+	const [cartWidth, setcartWidth] = useState("w-0");
+	const [cartVisibility, setcartVisibility] = useState("overflow-x-hidden"); // useState defines the initial cartvisibility to show the menu only when clicked
+
+
 	const [blur, setblur] = useState("hidden");
 
 	const openHam = () => {
@@ -24,15 +33,30 @@ function Navbar() {
 			sethamvisibility("overflow-x-hidden"); // this will make the hamburger invisible when not in use
 		}, 200);
 	};
+	const openCart = () => {
+		setcartWidth("w-[55%]"); // sethamwidth to the desired hamwidth for the hamburger menu by button id #hambutton
+		setTimeout(() => {
+			setcartVisibility("overflow-x-visible"); // this will make the close button visible
+			setblur("block");
+		}, 200);
+	};
+	const closeCart = () => {
+		setcartWidth("w-0"); // sethamwidth to 0 for the Hamburger menu by close button, it makes hamburger invisible when clicked
+		setTimeout(() => {
+			setblur("hidden");
+			setcartVisibility("overflow-x-hidden"); // this will make the hamburger invisible when not in use
+		}, 200);
+	};
 	return (
 		<>
 			<div
 				className={`absolute ${blur} top-0 w-full h-full bg-black  z-10 transition-all delay-[200ms] opacity-70`}
+				onClick={() => { closeCart(); closeHam(); }}
 			/>
 			{/* This div will make blur effect when hamburger is clicked*/}
 
 			<header className="text-black body-font bg-black">
-				<div className="container mx-auto flex flex-wrap pr-5 py-1 justify-between small:justify-start space-x-1 items-center">
+				<div className="container mx-auto flex flex-wrap pr-5 py-1 justify-between  space-x-1 items-center">
 					{/* {" "} */}
 					{/* Justify Start for small devices so that the button and Logo are aligned at left */}
 					{/* Below is the hamburger button*/}
@@ -59,8 +83,8 @@ function Navbar() {
 						</Link>
 					</div>
 					{/* The below div contains all the navigation links and login button */}
-					<div className="flex font-poppins space-x-2 items-center justify-end pr-10 md:pr-4 small:pr-0">
-						<nav className="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center w-full small:hidden space-x-4 mr-4">
+					<div className="flex font-poppins space-x-2 items-center justify-end pr-10 md:pr-4 small:pr-0 small:hidden">
+						<nav className="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center w-full  space-x-4 mr-4">
 							<Link href={"/"}>
 								<a className="hover:text-red-600 text-white hover:scale-110 transition-all duration-200 cursor-pointer">
 									HOME
@@ -96,10 +120,12 @@ function Navbar() {
 						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
 							<Link href={"/login"}>LOGIN</Link>
 						</button>
-						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
-							<AiOutlineShoppingCart className="text-white text-3xl" />
-						</button>
 
+					</div>
+					<div className="flex justify-end">
+						<button className=" transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
+							<AiOutlineShoppingCart onClick={openCart} className="text-white text-3xl" />
+						</button>
 					</div>
 				</div>
 			</header>
@@ -170,6 +196,19 @@ function Navbar() {
 						<CgClose />
 					</button>
 				</div>
+			</section>
+			<section
+				className={`fixed h-full right-0 top-0 z-20 bg-white transition-all delay-200 ${cartWidth} ${cartVisibility}`}
+			>
+				<div className="container">
+					{Cart.map((item) => {
+						<div>
+							{item}
+						</div>
+					})
+					}
+				</div>
+
 			</section>
 		</>
 	);
