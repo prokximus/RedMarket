@@ -22,10 +22,12 @@ const Login = () => {
 		document.getElementById("loginButton").onclick = function () {
 			location.href = "/";
 		};
+		
 		// For facebook login
 		document.getElementById("facebook-button").onclick = function () {
 			location.href = "/";
 		};
+
 		// For twitter login
 		document.getElementById("twitter-button").onclick = function () {
 			location.href = "/";
@@ -34,16 +36,19 @@ const Login = () => {
 
 	// Will slice the domain name
 	const domainName = email.slice(email.indexOf("@") + 1, email.indexOf("."));
+
 	// Will check the name before @
 	const checkName = email.slice(0, email.indexOf("@"));
+
 	// Will make a proper email
 	const emailCheck = `${checkName}@${domainName}.com`;
-	// Check if the password is >= 6 and emails includes '@domian.com'
 
+	// Check if the password is >= 6 and emails includes '@domian.com'
 	const test =
 		passlength >= 6 &&
 		email.includes(emailCheck) &&
-		domainName.length && checkName.length >= 1;
+		domainName.length &&
+		checkName.length >= 1;
 
 	return (
 		<div>
@@ -104,7 +109,9 @@ const Login = () => {
 									data-mdb-ripple-color="light"
 									disabled={!test}
 									onClick={() => {
-										toast.success("Login successful!", {style:{border: "2px solid black"}});
+										toast.success("Login successful!", {
+											style: { border: "2px solid black" },
+										});
 									}}
 								>
 									Log in
