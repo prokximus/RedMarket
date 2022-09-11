@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
+import { useEffect } from "react";
+
 
 function MyApp({ Component, pageProps }) {
 	const [Cart, setCart] = useState({})
@@ -47,6 +49,24 @@ function MyApp({ Component, pageProps }) {
 		setCart(myCart)
 		saveCart(myCart)
 	}
+	useEffect(() => {
+		try {
+			if (localStorage.getItem('cart')) {
+				let myCart = JSON.parse(localStorage.getItem('cart'))
+				let subt = 0;
+				let keys = Object.keys(myCart)
+				for (let i = 0; i < keys.length; i++) {
+					subt += myCart[keys[i]].price * myCart[keys[i]].qty
+				}
+				setsubTotal(subt)
+				setCart(myCart)
+			}
+		} catch (err) {
+			console.error(err)
+			localStorage.clear()
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 	return (
 		<>
 			<Head>
@@ -55,7 +75,7 @@ function MyApp({ Component, pageProps }) {
 				<link rel="icon" href="/icon.png" />
 			</Head>
 			<Navbar />
-			<Component {...pageProps} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} />
+			<Component {...pageProps} Cart={Cart} subTotal={subTotal} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} />
 		</>
 	);
 }

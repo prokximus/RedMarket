@@ -95,10 +95,13 @@ function Navbar() {
 
 						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
 							<Link href={"/login"}>LOGIN</Link>
+
 						</button>
-						<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
-							<AiOutlineShoppingCart className="text-white text-3xl" />
-						</button>
+						<Link href="/cart">
+							<button className="small:hidden transition-all duration-200 inline-flex items-center bg-[red] lg:text-xl border-0 py-1 px-3 focus:outline-none hover:bg-[red]/80 rounded-lg  text-white hover:scale-110">
+								<AiOutlineShoppingCart className="text-white text-3xl" />
+							</button>
+						</Link>
 					</div>
 				</div>
 			</header>
