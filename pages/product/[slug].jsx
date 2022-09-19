@@ -48,7 +48,7 @@ const Product = ({ product, addToCart }) => {
 							<button onClick={() => {
 								addToCart(product.slug.current, product.title, product.defaultProductVariant.price, product.img_url, product.cate);
 								toast.success("Item added to Cart!", {
-									style: { border: "2px solid black" },
+									style: { border: "1px solid black" },
 								});
 							}} className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
 								Add to cart
