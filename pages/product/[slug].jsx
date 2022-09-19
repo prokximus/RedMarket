@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { createClient } from "next-sanity";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import toast, { Toaster } from "react-hot-toast";
 
 const Product = ({ product, addToCart }) => {
 	const client = createClient({
@@ -16,6 +17,7 @@ const Product = ({ product, addToCart }) => {
 	return (
 		<div>
 			<section className="text-gray-600 body-font">
+				<Toaster position="top-center" reverseOrder={false} />
 				<div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
 					<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
 						<picture>
@@ -43,7 +45,12 @@ const Product = ({ product, addToCart }) => {
 							<button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">
 								Buy Now
 							</button>
-							<button onClick={() => { addToCart(product.slug.current, product.title, product.defaultProductVariant.price, product.img_url, product.cate) }} className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+							<button onClick={() => {
+								addToCart(product.slug.current, product.title, product.defaultProductVariant.price, product.img_url, product.cate);
+								toast.success("Item added to Cart!", {
+									style: { border: "2px solid black" },
+								});
+							}} className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
 								Add to cart
 							</button>
 						</div>
